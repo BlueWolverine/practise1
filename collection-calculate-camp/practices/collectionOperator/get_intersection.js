@@ -1,0 +1,25 @@
+'use strict';
+
+function get_intersection(collection_a, collection_b) {
+  let result = [];
+  if (collection_a.length <= collection_b.length) {
+    for (let i = 0; i<collection_b.length; i++) {
+      if (collection_a.indexOf(collection_b[i]) != -1) {
+        result.push(collection_b[i]);
+      }
+    }
+  } else {
+    for (let i = 0; i<collection_a.length; i++) {
+      if (collection_b.indexOf(collection_a[i]) != -1) {
+        result.push(collection_a[i]);
+      }
+    }
+  }
+  return result;
+}
+
+var collection_a = [10, 27, 28, 19, 5];
+var collection_b = [5, 78, 28, 19, 23];
+var collection_c = [5, 28, 19];
+console.log(get_intersection(collection_a, collection_b));
+module.exports = get_intersection;
